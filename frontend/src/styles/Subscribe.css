@@ -1,0 +1,122 @@
+.subscribe-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe-content {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.subscribe-content h1 {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.subscribe-subtitle {
+  opacity: 0.7;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.subscribe-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.subscribe-card {
+  flex: 1;
+  max-width: 340px;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  background: var(--sidebar-bg, #fafafa);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.subscribe-card-highlighted {
+  border-color: var(--text-color, #111);
+  border-width: 2px;
+}
+
+.subscribe-badge {
+  position: absolute;
+  top: -12px;
+  background: var(--text-color, #111);
+  color: var(--bg-color, #fff);
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.subscribe-card h2 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.subscribe-price {
+  margin-bottom: 1.5rem;
+}
+
+.subscribe-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.subscribe-period {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-left: 0.25rem;
+}
+
+.subscribe-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  text-align: left;
+  width: 100%;
+}
+
+.subscribe-features li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color, #eee);
+  font-size: 0.9rem;
+}
+.subscribe-features li:last-child {
+  border-bottom: none;
+}
+
+.subscribe-cta {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--text-color, #111);
+  background: var(--text-color, #111);
+  color: var(--bg-color, #fff);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: auto;
+}
+.subscribe-cta:hover {
+  opacity: 0.9;
+}
+
+.subscribe-cta-active {
+  background: transparent;
+  color: var(--text-color, #111);
+  cursor: default;
+}
+.subscribe-cta-active:hover {
+  opacity: 1;
+}

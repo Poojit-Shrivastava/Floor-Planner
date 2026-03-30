@@ -59,6 +59,48 @@
   font-weight: bold;
 }
 
+.presets-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+.presets-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+  opacity: 0.8;
+}
+
+.presets-grid {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.preset-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.25rem 2rem;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 10px;
+  background: var(--sidebar-bg, #f9f9f9);
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.preset-btn:hover {
+  border-color: var(--text-color, #111);
+  transform: translateY(-2px);
+}
+.preset-size {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.preset-dim {
+  font-size: 0.8rem;
+  opacity: 0.55;
+}
+
 .about-section {
   display: flex;
   gap: 2rem;

@@ -31,4 +31,16 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET /api/floors/:id
+router.get('/:id', async (req, res) => {
+  try {
+    const plan = await FloorPlan.findById(req.params.id);
+    if (!plan) return res.status(404).json({ message: 'Plan not found' });
+    res.status(200).json(plan);
+  } catch (error) {
+    console.error('Fetch by ID error:', error);
+    res.status(500).json({ message: error.message });
+  }
+});
+
 module.exports = router;

@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
+import { saveFloorPlan } from "../services/api";
 import Canvas from "../components/Canvas";
 import Sidebar from "../components/Sidebar";
 import Layout from "../components/Layout";
@@ -89,16 +90,33 @@ export default function Planner() {
   }, [cols, rows, walls, objects]);
 
 
-  /* FETCH EXISTING PLANS ON LOAD (Optional sync from database) */
+  /* ACCEPT PRESETS / LOADED PLANS FROM NAVIGATION */
+  const location = useLocation();
+  const hasLoadedRef = useRef(false);
+
   useEffect(() => {
-    axios.get("http://localhost:5000/api/floors")
-      .then(res => {
-        if (res.data && res.data.length > 0) {
-          // You could initialize with DB floors here by formatting to floorsData array
-        }
-      })
-      .catch(err => console.error(err));
-  }, []);
+    if (hasLoadedRef.current) return;
+    const state = location.state;
+    if (!state) return;
+
+    if (state.preset) {
+      setCols(state.preset.cols);
+      setRows(state.preset.rows);
+      setWalls([]);
+      setObjects([]);
+      hasLoadedRef.current = true;
+    }
+
+    if (state.loadPlan) {
+      const lp = state.loadPlan;
+      setCols(lp.cols || 20);
+      setRows(lp.rows || 16);
+      setWalls(lp.walls || []);
+      setObjects(lp.objects || []);
+      if (lp.floorNumber) setCurrentFloor(lp.floorNumber);
+      hasLoadedRef.current = true;
+    }
+  }, [location.state]);
 
   const handleSaveCurrentFloorLocal = () => {
     setFloorsData(prev => prev.map(f => 
@@ -120,17 +138,27 @@ export default function Planner() {
   };
 
   const savePlanToDB = async () => {
-    try {
-      await axios.post("http://localhost:5000/api/floors/save", {
-        floorNumber: currentFloor,
-        layout: { cols, rows, walls, objects },
-        name: `Floor ${currentFloor} Plan`
-      });
-      alert(`Floor ${currentFloor} saved successfully to database!`);
-    } catch (err) {
-      console.error(err);
-      alert("Error saving to database");
+    const result = await saveFloorPlan({
+      floorNumber: currentFloor,
+      layout: { cols, rows, walls, objects },
+      name: `Floor ${currentFloor} Plan`
+    });
+    if (result.success) {
+      alert(`Floor ${currentFloor} saved successfully!`);
+    } else {
+      alert(`Error saving: ${result.message}`);
     }
+  };
+
+  const savePlanAsJSON = () => {
+    const blob = new Blob(
+      [JSON.stringify({ cols, rows, walls, objects }, null, 2)],
+      { type: "application/json" }
+    );
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "floor-plan.json";
+    a.click();
   };
 
 
@@ -279,7 +307,9 @@ export default function Planner() {
             setSelected={setSelected}
             objects={objects}
             setObjects={setObjects}
+            setWalls={setWalls}
             isValid={isValid}
+            savePlan={savePlanAsJSON}
           />
         }
         canvas={

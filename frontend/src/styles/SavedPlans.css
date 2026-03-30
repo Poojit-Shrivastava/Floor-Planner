@@ -1,0 +1,133 @@
+.saved-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.saved-content {
+  flex: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+.saved-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.saved-header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.saved-refresh-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--border-color, #ccc);
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.saved-refresh-btn:hover {
+  border-color: var(--text-color, #111);
+}
+
+.saved-status {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.6;
+}
+
+.saved-error {
+  text-align: center;
+  padding: 1rem;
+  background: #fdeaea;
+  color: #c0392b;
+  border-radius: 8px;
+}
+
+.saved-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.saved-empty p {
+  font-size: 1.1rem;
+  opacity: 0.6;
+  margin-bottom: 1.5rem;
+}
+.saved-cta {
+  padding: 12px 24px;
+  background: var(--text-color, #111);
+  color: var(--bg-color, #fff);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.saved-card {
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: var(--sidebar-bg, #fafafa);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.saved-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.saved-card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.saved-floor-badge {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.saved-card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.saved-card-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.saved-load-btn {
+  margin-top: 0.5rem;
+  padding: 8px;
+  background: var(--text-color, #111);
+  color: var(--bg-color, #fff);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.saved-load-btn:hover {
+  opacity: 0.9;
+}
