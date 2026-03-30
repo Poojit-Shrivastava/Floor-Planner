@@ -1,0 +1,27 @@
+/* ===== ROOT ===== */
+.app-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #eaeaea;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ===== SIDEBAR ===== */
+.app-sidebar {
+  width: 300px;
+  background: #f7f7f7;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+/* ===== CANVAS ===== */
+.app-canvas {
+  flex: 1;
+  background: #fafafa;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
