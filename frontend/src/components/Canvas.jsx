@@ -66,7 +66,7 @@ export default function Canvas({
               return (
                 <div
                   key={o.id}
-                  className={`object furniture ${selected?.id === o.id ? "selected" : ""}`}
+                  className={`object furniture ${o.furnitureKey?.startsWith("stairs") ? "stairs" : ""} ${selected?.id === o.id ? "selected" : ""}`}
                   onMouseDown={e => {
                     e.stopPropagation();
                     setSelected(o);

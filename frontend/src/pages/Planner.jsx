@@ -176,7 +176,7 @@ export default function Planner() {
   const [wallThickness] = useState(0.1);
 
   useEffect(() => {
-    if (tool === "furniture") {
+    if (tool === "furniture" || tool === "stairs") {
       setShowFurnitureDialog(true);
     }
   }, [tool]);
@@ -227,6 +227,7 @@ export default function Planner() {
       const obj = {
         id: Date.now(),
         kind: "furniture",
+        furnitureKey: activeFurniture,
         shape: f.shape,
         row,
         col,
