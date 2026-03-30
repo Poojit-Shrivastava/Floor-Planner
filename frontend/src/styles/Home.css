@@ -1,0 +1,75 @@
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-color, #ccc);
+  background-color: var(--sidebar-bg, #f4f4f4);
+}
+
+.home-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav-btn {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: 1px solid var(--border-color, #ccc);
+  background: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--text-color, #000);
+}
+
+.nav-btn.primary {
+  background: var(--text-color, #000);
+  color: var(--bg-color, #fff);
+}
+
+.home-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.about-section {
+  display: flex;
+  gap: 2rem;
+  margin-top: 5rem;
+  max-width: 800px;
+}
+
+.about-card {
+  flex: 1;
+  padding: 2rem;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 8px;
+  background-color: var(--sidebar-bg, #f4f4f4);
+}
