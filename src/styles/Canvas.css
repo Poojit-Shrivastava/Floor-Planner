@@ -1,0 +1,80 @@
+.canvas-wrapper {
+  flex: 1;
+  overflow: auto;
+  background: #fafafa;
+  padding: 24px;
+}
+
+.canvas-center {
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas-grid {
+  position: relative;
+  display: grid;
+  background: #ffffff;
+  border: 2px solid #222;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.grid-cell {
+  border: 1px solid #e3e3e3;
+  background: transparent;
+}
+
+.wall-cell {
+  background: #1f1f1f;
+}
+
+.object {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.furniture {
+  border: 2px solid #111;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.furniture.selected {
+  outline: 2px dashed #000;
+  outline-offset: 3px;
+}
+
+.furniture-icon {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.door {
+  background: #7a4a2e;
+}
+
+.canvas-wrapper::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.canvas-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+.furniture.stairs {
+  background: repeating-linear-gradient(
+    45deg,
+    #777,
+    #777 5px,
+    #aaa 5px,
+    #aaa 10px
+  );
+}

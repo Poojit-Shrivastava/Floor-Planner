@@ -1,0 +1,54 @@
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background: #f9f9f9;
+  padding: 16px;
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #444;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.tool-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#1e1e1e;
+  gap: 6px;
+  padding: 6px;
+  font-size: 12px;
+  background: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.tool-btn.active {
+  background: #1e1e1e;
+  color: #fff2f2;
+}
+
+.tool-icon svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  fill: none;
+}
